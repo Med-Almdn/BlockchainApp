@@ -54,3 +54,14 @@ block = {
     ]
 }
 ```
+
+### Proof of Work Algorithm
+The proof of work algorithm seeks to find a number `q` such that the hash of the product `p * q` begins with a specified number of leading zeroes (in this example, four). Here, `last_proof` is used as `p`, and `proof` is incremented as `q` until a solution is found:
+
+```python
+def proof_of_work(last_proof):
+    proof = 0
+    while not valid_proof(last_proof, proof):
+        proof += 1
+    return proof
+```

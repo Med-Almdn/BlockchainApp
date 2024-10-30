@@ -1,3 +1,5 @@
+import hashlib
+import json
 from time import time
 
 class Blockchain(object):
@@ -50,3 +52,26 @@ class Blockchain(object):
     @property
     def last_block(self):
         return self.chain[-1]
+
+    @staticmethod
+    def hash(block):
+        
+        # We must make sure that the Dictionary is Ordered, or we'll have inconsistent hashes
+        block_string = json.dumps(block, sort_keys=True).encode()  # Convert the Python dictionary to a JSON string
+        return hashlib.sha256(block_string).hexdigest()
+    
+    
+    def proof_of_work(self, last_proof):
+        
+        proof = 0
+        while self.valid_proof(last_proof, proof) is False:
+            proof += 1
+
+        return proof
+
+    @staticmethod
+    def valid_proof(last_proof, proof):
+        
+        guess = f'{last_proof}{proof}'.encode()
+        guess_hash = hashlib.sha256(guess).hexdigest()
+        return guess_hash[:4] == "0000"
