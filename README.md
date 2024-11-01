@@ -1,5 +1,7 @@
 # Building a Blockchain from Scratch
 
+This project is a simple Blockchain system in Python with an API for interaction via Postman. It allows users to create transactions, mine blocks, and view the blockchain, providing a practical understanding of blockchain concepts.
+
 ## Table of Contents
 
 1. [Constructing the Blockchain](#step-1-constructing-the-blockchain)  
@@ -11,18 +13,7 @@
     2.1 [Setting Up Flask](#setting-up-flask)  
     2.2 [Adding Transactions](#adding-transactions)  
     2.3 [Mining Endpoint](#mining-endpoint)  
-
-3. [Interacting with the Blockchain](#step-3-interacting-with-the-blockchain)  
-
-4. [Testing the Blockchain API](#step-4-testing-the-blockchain-api)  
-    4.1 [Testing Endpoints with cURL](#testing-endpoints-with-curl)  
-        - [Testing the `/mine` Endpoint](#1-testing-the-mine-endpoint)  
-        - [Testing the `/transactions/new` Endpoint](#2-testing-the-transactionsnew-endpoint)  
-        - [Testing the `/chain` Endpoint](#3-testing-the-chain-endpoint)  
-    4.2 [Testing with Postman](#testing-with-postman)  
-    4.3 [Verifying the Test Results](#verifying-the-test-results)  
-
-5. [What I Learned](#what-i-learned)  
+  
 
 ---
 
