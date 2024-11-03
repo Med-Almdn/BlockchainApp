@@ -174,3 +174,72 @@ def mine():
 ```
 
 ---
+
+## Step 3: Interacting with the Blockchain
+Run the server with `$ python blockchain.py`. Use cURL or Postman to interact:
+- **Mine a Block**: `GET http://localhost:5000/mine`
+- **Create a Transaction**: `POST http://localhost:5000/transactions/new`
+- **View the Chain**: `GET http://localhost:5000/chain`
+
+---
+
+## Step 4: Testing the Blockchain API
+
+### Testing Endpoints with cURL
+
+#### 1. Testing the `/mine` Endpoint
+Run the following command to mine a new block:
+```bash
+curl -X GET http://localhost:5000/mine
+```
+
+#### 2. Testing the `/transactions/new` Endpoint
+Submit a new transaction:
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{
+    "sender": "address_1",
+    "recipient": "address_2",
+    "amount": 5
+}' http://localhost:5000/transactions/new
+```
+
+#### 3. Testing the `/chain` Endpoint
+View the full blockchain:
+```bash
+curl -X GET http://localhost:5000/chain
+```
+
+### Testing with Postman
+- **Add a Transaction**: Select POST, add JSON to the body.
+- **Mine a Block**: Use a GET request.
+- **View the Chain**: Use a GET request for `/chain`.
+
+### Verifying the Test Results
+Ensure transactions are added to the chain correctly, mined blocks contain the new transactions, and all hashes and block links are accurate.
+
+---
+
+## What I Learned
+
+Working on this blockchain project helped me develop and reinforce several key skills:
+
+1. **Core Concepts of Blockchain**:
+   - I gained a deeper understanding of blockchain fundamentals, including how blocks are structured, how they are linked together through cryptographic hashes, and how transactions are securely recorded within each block.
+
+2. **Proof of Work and Consensus**:
+   - I implemented a basic Proof of Work algorithm, learning how consensus mechanisms help secure blockchain networks by requiring computational work to validate new blocks.
+
+3. **Cryptography and Hashing**:
+   - Using hashing functions for block validation and linkage improved my understanding of cryptographic methods and their essential role in maintaining data integrity within the blockchain.
+
+4. **API Development with Flask**:
+   - Setting up a web API with Flask allowed me to practice building RESTful services, handling HTTP requests, and formatting responses in JSON to make the blockchain accessible to users.
+
+5. **Transaction and Block Management**:
+   - I learned how transactions are organized and stored within blocks and how mining rewards are used as an incentive in blockchain ecosystems.
+
+6. **Testing and Interacting with APIs**:
+   - I practiced using tools like Postman and cURL to interact with
+
+ and test APIs, ensuring that each endpoint performed as expected.
+
